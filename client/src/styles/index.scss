@@ -1,0 +1,39 @@
+@import "./header";
+@import "./footer";
+@import "./variable";
+@import "./home";
+@import "./sermons";
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+@import url("https://fonts.googleapis.com/css2?family=Rochester");
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "react-h5-audio-player/src/styles.scss";
+
+*,
+html {
+  scroll-behavior: smooth;
+  ::selection {
+    color: white;
+    background: #f66700;
+  }
+  .poppins {
+    font-family: $poppins;
+  }
+  .montserrat {
+    font-family: $montserrat;
+  }
+  .m-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .rochester {
+    font-family: "Rochester", cursive;
+  }
+  .scroll-to-top {
+    right: 10px;
+    bottom: 10px;
+    background: #f66800;
+  }
+}

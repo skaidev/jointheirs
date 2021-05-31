@@ -1,0 +1,104 @@
+footer {
+  margin: 0;
+
+  .subscribe {
+    background: #ccceff;
+    min-height: 200px;
+    form {
+      justify-content: space-between;
+      .txt {
+        width: 29%;
+        @media screen and (max-width: 991px) {
+          width: 100%;
+        }
+      }
+      .input {
+        display: flex;
+        width: 70%;
+        flex: 1;
+        align-items: center;
+        @media screen and (max-width: 991px) {
+          width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        input {
+          all: unset;
+          border: 1px solid #ededed;
+          box-sizing: border-box;
+          background: #ededed;
+          flex-grow: 1;
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .main-footer {
+    background: url("./images/Mask Group.png") no-repeat;
+    background-size: cover;
+
+    ul {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      color: white;
+      font-size: 20px;
+      @media screen and (max-width: 991px) {
+        flex-direction: column;
+        align-items: flex-start;
+        li {
+          margin: 2px 0;
+        }
+      }
+    }
+    .footer-logo {
+      @media screen and (max-width: 991px) {
+        justify-content: flex-start !important;
+      }
+    }
+    .footer-btn {
+      display: flex;
+      justify-content: space-around;
+      button {
+        transition: 0.5s all ease-in-out;
+        &:hover {
+          background: #f66800;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        flex-direction: column;
+        align-items: flex-start;
+        button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .footer-icons {
+      h3 {
+        @media screen and (max-width: 991px) {
+          width: 50% !important;
+          margin: 0 !important;
+          justify-content: space-between !important;
+          @media screen and (max-width: 768px) {
+            width: 100% !important;
+          }
+        }
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 39px;
+          height: 36px;
+          border: 1px solid white;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}

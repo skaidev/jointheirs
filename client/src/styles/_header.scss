@@ -1,0 +1,72 @@
+header {
+  background: rgba(3, 12, 224, 0.3);
+  backdrop-filter: blur(33px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  z-index: 999;
+  .header {
+    color: white;
+    font-weight: bold;
+    &-wrap {
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .logo-section {
+      flex: 0.6;
+      @media screen and (max-width: 1116px) {
+        width: 100%;
+        @media screen and (max-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      .logo {
+        h4 {
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+      .menu {
+        .bars {
+          height: 4px;
+          border-radius: 50px;
+          width: 30px;
+          background: #f66800;
+          margin: 3px 0;
+        }
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+    .items {
+      flex: 1;
+      @media screen and (max-width: 1116px) {
+        width: 100%;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+      li {
+        padding: 4px 8px;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          background: #f66800;
+          border-radius: 5px;
+        }
+      }
+      .join {
+        color: #f66800;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
