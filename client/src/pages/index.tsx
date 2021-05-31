@@ -3,6 +3,7 @@ import Typewriter from "typewriter-effect";
 import Slide from "../components/VersesSlide";
 import FrontLayout from "../layout/FrontLayout";
 import Image from "next/image";
+
 const index = (): JSX.Element => {
   return (
     <FrontLayout>
@@ -254,50 +255,24 @@ const index = (): JSX.Element => {
           <div className="m-container align-items-center d-lg-flex">
             <div className="visit-sermon-txt">
               <h1 className="font-weight-bolder mb-3 text-center">Sermons</h1>
-              <div className="single-sermon-wrap ">
-                <div className="single-sermon d-flex">
-                  <div className="single-sermon-ico-btn px-2 py-1">
-                    <i className="fas fa-microphone px-3 py-2  border-bottom border-dark"></i>
-                    <i className="fas fa-video px-3 py-2 border-bottom border-dark"></i>
-                    <i className="fas fa-book-open px-3 py-2 "></i>
-                  </div>
-                  <div className="single-sermon-txt pl-1 border-top border-bottom border-dark">
-                    <h4 className="mb-4">The Death of Jesus - Part One</h4>
-                    <h4>
-                      <b>20.05.28</b>
-                      &nbsp;Pastor John Mark
-                    </h4>
-                  </div>
-                </div>
-                <div className="single-sermon d-flex">
-                  <div className="single-sermon-ico-btn px-2 py-1">
-                    <i className="fas fa-microphone px-3 py-2  border-bottom border-dark"></i>
-                    <i className="fas fa-video px-3 py-2 border-bottom border-dark"></i>
-                    <i className="fas fa-book-open px-3 py-2 "></i>
-                  </div>
-                  <div className="single-sermon-txt pl-1 border-top border-bottom border-dark">
-                    <h4 className="mb-4">The Death of Jesus - Part One</h4>
-                    <h4>
-                      <b>20.05.28</b>
-                      &nbsp;Pastor John Mark
-                    </h4>
+              {visitsermon.map((sermon) => (
+                <div className="single-sermon-wrap ">
+                  <div className="single-sermon d-flex">
+                    <div className="single-sermon-ico-btn px-2 py-1">
+                      <i className="fas fa-microphone px-3 py-2  border-bottom border-dark"></i>
+                      <i className="fas fa-video px-3 py-2 border-bottom border-dark"></i>
+                      <i className="fas fa-book-open px-3 py-2 "></i>
+                    </div>
+                    <div className="single-sermon-txt pl-1">
+                      <h4 className="mb-4">{sermon.title}</h4>
+                      <h5>
+                        <b>{sermon.time}</b>
+                        &nbsp;&nbsp;{sermon.pastor}
+                      </h5>
+                    </div>
                   </div>
                 </div>
-                <div className="single-sermon d-flex">
-                  <div className="single-sermon-ico-btn px-2 py-1">
-                    <i className="fas fa-microphone px-3 py-2  border-bottom border-dark"></i>
-                    <i className="fas fa-video px-3 py-2 border-bottom border-dark"></i>
-                    <i className="fas fa-book-open px-3 py-2 "></i>
-                  </div>
-                  <div className="single-sermon-txt pl-1 border-top border-bottom border-dark">
-                    <h4 className="mb-4">The Death of Jesus - Part One</h4>
-                    <h4>
-                      <b>20.05.28</b>
-                      &nbsp;Pastor John Mark
-                    </h4>
-                  </div>
-                </div>
-              </div>
+              ))}
               <button className="btn btn-outline-warning px-5 py-3 my-4">
                 View More
               </button>
@@ -535,3 +510,30 @@ export default index;
 //   </div>
 //   <button type="submit" className="btn btn-primary mb-2">Confirm identity</button>
 // </form>
+
+const visitsermon = [
+  {
+    id: 1,
+    title: "The Death of Jesus - Part One",
+    time: new Date().toLocaleTimeString(),
+    pastor: "Pastor John Mark",
+  },
+  {
+    id: 2,
+    title: "The Death of Jesus - Part One",
+    time: new Date().toLocaleTimeString(),
+    pastor: "Pastor John Mark",
+  },
+  {
+    id: 3,
+    title: "The Death of Jesus - Part One",
+    time: new Date().toLocaleTimeString(),
+    pastor: "Pastor John Mark",
+  },
+  {
+    id: 4,
+    title: "The Death of Jesus - Part One",
+    time: new Date().toLocaleTimeString(),
+    pastor: "Pastor John Mark",
+  },
+];

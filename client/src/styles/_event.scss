@@ -1,0 +1,89 @@
+main {
+  min-height: 100vh;
+  .m-container {
+    .type-of-event {
+      width: 70%;
+      margin: 0 auto;
+      button {
+        flex: 1;
+        transition-duration: 0.5s;
+        background: #ffffff;
+        border: 0 !important;
+        outline: 0 !important;
+        font-size: 18px;
+        &:active,
+        &:focus,
+        &:visited {
+          border: 0 !important;
+          outline: 0 !important;
+        }
+      }
+      .purple {
+        background: #030ce0;
+        color: white;
+      }
+    }
+    .events-wrap {
+      .events {
+        min-height: 408px;
+        border: 0;
+        .event {
+          background: url("./images/Rectangle 27.png") no-repeat;
+          background-size: cover;
+          border: 0;
+          overflow: hidden;
+          &:hover {
+            .content {
+              transform: translateY(0);
+              .hide {
+                visibility: visible;
+              }
+            }
+          }
+          .content {
+            transform: translateY(60%);
+            background: rgba(204, 206, 255, 0.67);
+            backdrop-filter: blur(33px);
+            border-radius: 10px;
+            height: inherit;
+            transition: all 1s ease-in-out;
+            .hide {
+              transition-duration: 0.1s;
+              transition-delay: 0.5s;
+              transition-property: visibility;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  .our-location {
+    position: relative;
+    // overflow: hidden;
+    &-wrap {
+      gap: 3rem;
+      img {
+        right: 0;
+        top: 0;
+        z-index: -1;
+        position: absolute;
+        transform: translate(0, -50%);
+      }
+      .left {
+        flex: 1;
+        &-address {
+          gap: 3rem;
+          &-main {
+            flex: 1;
+            display: flex;
+            gap: 1rem;
+          }
+        }
+      }
+      .right {
+        flex: 1;
+      }
+    }
+  }
+}
