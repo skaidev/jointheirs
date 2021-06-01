@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 
 const Header = (): JSX.Element => {
+  const [menu, setMenu] = useState(false);
   return (
     <header className="montserrat py-1">
       <div className="header m-container">
@@ -16,23 +18,92 @@ const Header = (): JSX.Element => {
                 Joint Heirs Assembly <br /> International
               </h4>
             </section>
-            <section className="menu">
+            <section className="menu" onClick={() => setMenu(!menu)}>
               <div className=" bars"></div>
               <div className=" bars"></div>
               <div className=" bars"></div>
             </section>
           </nav>
-
           <ul className="nav links items justify-content-between">
-            <li className="nav-item">HOME</li>
-            <li className="nav-item"> SERMON</li>
-            <li className="nav-item">BRANCHES</li>
-            <li className="nav-item">ABOUT</li>
-            <li className="nav-item">CONTACT</li>
-            <li className="nav-item join">JOIN US</li>
+            <li className="nav-item">
+              <Link href="/">
+                <a>HOME</a>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/sermons">
+                <a>SERMON</a>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/branches">
+                <a>BRANCHES</a>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/about">
+                <a>ABOUT</a>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/contact">
+                <a>CONTACT</a>
+              </Link>
+            </li>
+
+            <li className="nav-item join">
+              <Link href="/join">
+                <a>JOIN US</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
+      {menu && (
+        <div className="m-container">
+          <ul className="list-group min-item">
+            <li className="nav-item list-group-item">
+              <Link href="/">
+                <a>HOME</a>
+              </Link>
+            </li>
+
+            <li className="nav-item list-group-item">
+              <Link href="/sermons">
+                <a>SERMON</a>
+              </Link>
+            </li>
+
+            <li className="nav-item list-group-item">
+              <Link href="/branches">
+                <a>BRANCHES</a>
+              </Link>
+            </li>
+
+            <li className="nav-item list-group-item">
+              <Link href="/about">
+                <a>ABOUT</a>
+              </Link>
+            </li>
+
+            <li className="nav-item list-group-item">
+              <Link href="/contact">
+                <a>CONTACT</a>
+              </Link>
+            </li>
+
+            <li className="nav-item join list-group-item">
+              <Link href="/join">
+                <a>JOIN US</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 };

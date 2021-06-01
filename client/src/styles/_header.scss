@@ -54,14 +54,48 @@ header {
         }
       }
       li {
+        a {
+          padding: 4px 8px;
+          transition: 0.5s ease-in-out;
+          cursor: pointer;
+          text-decoration: none;
+          color: white !important;
+          &:hover {
+            background: #f66800;
+            border-radius: 5px;
+          }
+        }
+      }
+      .join {
+        color: #f66800;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .min-item {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    li {
+      border: 0;
+      background-color: transparent;
+      text-align: center;
+      a {
         padding: 4px 8px;
         transition: 0.5s ease-in-out;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
         &:hover {
           background: #f66800;
           border-radius: 5px;
         }
       }
-      .join {
+    }
+    .join {
+      a {
         color: #f66800;
         &:hover {
           color: white;

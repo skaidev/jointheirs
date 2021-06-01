@@ -1,0 +1,94 @@
+.first {
+  &-welcome {
+    gap: 2rem;
+    min-height: 10vh;
+    img {
+      top: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+  }
+}
+.spiritual {
+  background: #ededed;
+  &-wrap {
+    gap: 3rem;
+    .left {
+      flex: 1;
+    }
+    .right {
+      flex: 1;
+    }
+  }
+}
+.our-team {
+  &-wrap {
+    gap: 3rem;
+    .left {
+      flex: 1;
+      figure {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        &:hover {
+          figcaption {
+            opacity: 0.74;
+          }
+        }
+        figcaption {
+          position: absolute;
+          transition-duration: 0.5s !important;
+          transition-property: opacity !important;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          color: rgb(255, 255, 255, 1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #022162;
+          opacity: 0;
+          gap: 2rem;
+        }
+      }
+    }
+    .right {
+      flex: 1;
+    }
+  }
+}
+.sunday {
+  background: #ccceff;
+  &-wrap {
+    gap: 3rem;
+    .left {
+      flex: 1;
+    }
+    .right {
+      flex: 1;
+    }
+  }
+}
+
+.what-next {
+  &-wrap {
+    .pronto {
+      bottom: 0;
+      right: 0;
+      transform: translateY(50%);
+      z-index: -1;
+    }
+    .absolute {
+      width: 60px;
+      height: 60px;
+      background: #030ce0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      left: 30px;
+      transform: translateY(-50%);
+    }
+  }
+}

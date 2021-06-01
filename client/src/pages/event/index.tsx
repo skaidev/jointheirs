@@ -1,31 +1,197 @@
+import Link from "next/dist/client/link";
 import React, { useState } from "react";
 import Cover from "../../components/Cover";
 import FrontLayout from "../../layout/FrontLayout";
-import Link from "next/dist/client/link";
 
 const index = () => {
   const [typeE, setTypeE] = useState({
-    General: "",
-    Children: "",
-    Men: "",
-    Women: "",
-    Youth: "",
+    General: false,
+    Children: true,
+    Men: false,
+    Women: false,
+    Youth: false,
   });
+  const [minType, setMinType] = useState(false);
+
   return (
     <FrontLayout>
       <main className=" poppins">
         <Cover first="Our Annual Events" />
-
         <div className="m-container py-5">
-          <div className="container type-of-event d-flex mb-4">
-            {Tevent.map((e) => (
-              <button
-                key={e.id}
-                className={`btn px-4 py-3 border-0 ${e.status && `purple`}`}
-              >
-                {e.txt}
-              </button>
-            ))}
+          <div className="container px-0 row row-cols-5 type-of-event d-flex mb-5">
+            <div
+              className={`col button ${typeE.General && `purple`}`}
+              onClick={() =>
+                setTypeE({
+                  ...typeE,
+                  General: true,
+                  Children: false,
+                  Men: false,
+                  Women: false,
+                  Youth: false,
+                })
+              }
+            >
+              General
+            </div>
+            <div
+              className={`col button ${typeE.Children && `purple`}`}
+              onClick={() =>
+                setTypeE({
+                  ...typeE,
+                  General: false,
+                  Children: true,
+                  Men: false,
+                  Women: false,
+                  Youth: false,
+                })
+              }
+            >
+              Children
+            </div>
+            <div
+              className={`col button ${typeE.Men && `purple`}`}
+              onClick={() =>
+                setTypeE({
+                  ...typeE,
+                  General: false,
+                  Children: false,
+                  Men: true,
+                  Women: false,
+                  Youth: false,
+                })
+              }
+            >
+              Men
+            </div>
+            <div
+              className={`col button ${typeE.Women && `purple`}`}
+              onClick={() =>
+                setTypeE({
+                  ...typeE,
+                  General: false,
+                  Children: false,
+                  Men: false,
+                  Women: true,
+                  Youth: false,
+                })
+              }
+            >
+              Women
+            </div>
+            <div
+              className={`col button ${typeE.Youth && `purple`}`}
+              onClick={() =>
+                setTypeE({
+                  ...typeE,
+                  General: false,
+                  Children: false,
+                  Men: false,
+                  Women: false,
+                  Youth: true,
+                })
+              }
+            >
+              Youth
+            </div>
+          </div>
+          <div className="type-of-event-min mb-4">
+            {!minType && (
+              <i
+                className="btn fas fa-2x fa-sliders-h btn-light"
+                onClick={() => setMinType(!minType)}
+                role="button"
+              ></i>
+            )}
+            {minType && (
+              <div className="d-flex justify-content-start">
+                <ul>
+                  <li className="d-flex px-2 py-1 controller justify-content-between">
+                    <span>Find By</span>
+                    <i
+                      className="fas fa-times"
+                      onClick={() => setMinType(false)}
+                      role="button"
+                    ></i>
+                  </li>
+                  <li
+                    className={`px-2 py-1 ${typeE.General && `purple`}`}
+                    onClick={() =>
+                      setTypeE({
+                        ...typeE,
+                        General: true,
+                        Children: false,
+                        Men: false,
+                        Women: false,
+                        Youth: false,
+                      })
+                    }
+                  >
+                    All
+                  </li>
+                  <li
+                    className={`px-2 py-1 ${typeE.Children && `purple`}`}
+                    onClick={() =>
+                      setTypeE({
+                        ...typeE,
+                        General: false,
+                        Children: true,
+                        Men: false,
+                        Women: false,
+                        Youth: false,
+                      })
+                    }
+                  >
+                    Children
+                  </li>
+                  <li
+                    className={`px-2 py-1 ${typeE.Men && `purple`}`}
+                    onClick={() =>
+                      setTypeE({
+                        ...typeE,
+                        General: false,
+                        Children: false,
+                        Men: true,
+                        Women: false,
+                        Youth: false,
+                      })
+                    }
+                  >
+                    Men
+                  </li>
+                  <li
+                    className={`px-2 py-1 ${typeE.Women && `purple`}`}
+                    onClick={() =>
+                      setTypeE({
+                        ...typeE,
+                        General: false,
+                        Children: false,
+                        Men: false,
+                        Women: true,
+                        Youth: false,
+                      })
+                    }
+                  >
+                    Women
+                  </li>
+                  <li
+                    className={`px-2 py-1 ${typeE.Youth && `purple`}`}
+                    onClick={() =>
+                      setTypeE({
+                        ...typeE,
+                        General: false,
+                        Children: false,
+                        Men: false,
+                        Women: false,
+                        Youth: true,
+                      })
+                    }
+                  >
+                    Youth
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
           <div className="row events-wrap row-cols-1 row-cols-md-2 row-cols-lg-3">
             {events.map((eve) => (
@@ -175,33 +341,5 @@ const events = [
     writeup:
       "Men only – we welcome all men who wish to spend the breakfast time eating delicious homemade food and talk about important things like news",
     title: "Childrens Day Celebration",
-  },
-];
-
-const Tevent = [
-  {
-    id: 1,
-    txt: "General",
-    status: false,
-  },
-  {
-    id: 2,
-    txt: "Children",
-    status: true,
-  },
-  {
-    id: 3,
-    txt: "Men",
-    status: false,
-  },
-  {
-    id: 4,
-    txt: "Women",
-    status: false,
-  },
-  {
-    id: 5,
-    txt: "Youth",
-    status: false,
   },
 ];
