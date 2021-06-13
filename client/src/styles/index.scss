@@ -1,11 +1,14 @@
-@import "./header";
-@import "./footer";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/sermon/audio";
+@import "./components/sermon/text";
+@import "./components/sermon/video";
 @import "./variable";
 @import "./home";
 @import "./sermons";
 @import "./branch";
 @import "./error";
-@import "./cover";
+@import "./components/cover";
 @import "./event";
 @import "./about";
 @import url("https://fonts.googleapis.com/css2?family=Poppins");

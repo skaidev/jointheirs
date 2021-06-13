@@ -1,8 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Slide from "../components/VersesSlide";
 import FrontLayout from "../layout/FrontLayout";
-import Image from "next/image";
 
 const index = (): JSX.Element => {
   return (
@@ -82,7 +83,11 @@ const index = (): JSX.Element => {
                     className="d-block mx-auto mb-3"
                   />
                   <h3 className="text-center">
-                    Latest Video <br /> Sermon
+                    <Link href="/sermons">
+                      <a className="text-decoration-none text-dark">
+                        Latest Video <br /> Sermon
+                      </a>
+                    </Link>
                   </h3>
                 </div>
                 <div className="box px-2 py-5">
@@ -99,8 +104,12 @@ const index = (): JSX.Element => {
                     alt=""
                     className="d-block mx-auto mb-3"
                   />
-                  <h3 className="text-center">
-                    Church Up coming <br /> Events
+                  <h3 className="text-center ">
+                    <Link href="/event">
+                      <a className="text-decoration-none text-dark">
+                        Church Up coming <br /> Events
+                      </a>
+                    </Link>
                   </h3>
                 </div>
                 <div className="box px-2 py-5">
@@ -110,7 +119,11 @@ const index = (): JSX.Element => {
                     className="d-block mx-auto mb-3"
                   />
                   <h3 className="text-center">
-                    Find a Church <br /> Location / Branch
+                    <Link href="/branches">
+                      <a className="text-decoration-none text-dark">
+                        Find a Church <br /> Location / Branch
+                      </a>
+                    </Link>
                   </h3>
                 </div>
               </div>
@@ -182,9 +195,13 @@ const index = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            <button className="btn d-block mx-auto btn-warning px-5 py-3 text-light">
-              More Events
-            </button>
+            <Link href="/event">
+              <a className="text-light text-decoration-none">
+                <button className="btn d-block mx-auto btn-warning px-5 py-3 text-light">
+                  More Events
+                </button>
+              </a>
+            </Link>
           </div>
         </section>
         <section className="latest-sermon py-5 poppins">
@@ -207,9 +224,13 @@ const index = (): JSX.Element => {
                 </button>
               </div>
               <div>
-                <button className="btn py-3 px-5 border-light text-light">
-                  More Sermons
-                </button>
+                <Link href="/sermons">
+                  <a className="text-decoration-none">
+                    <button className="btn py-3 px-5 border-light text-light">
+                      More Sermons
+                    </button>
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="sermon-video mb-3">
@@ -244,9 +265,13 @@ const index = (): JSX.Element => {
                   <br />
                   celebrating baptism and communion.
                 </p>
-                <button className="btn btn-warning px-5 py-3 text-light">
-                  About Us
-                </button>
+                <Link href="/about">
+                  <a className="text-decoration-none">
+                    <button className="btn btn-warning px-5 py-3 text-light">
+                      About Us
+                    </button>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -256,7 +281,7 @@ const index = (): JSX.Element => {
             <div className="visit-sermon-txt">
               <h1 className="font-weight-bolder mb-3 text-center">Sermons</h1>
               {visitsermon.map((sermon) => (
-                <div className="single-sermon-wrap ">
+                <div className="single-sermon-wrap " key={sermon.id}>
                   <div className="single-sermon d-flex">
                     <div className="single-sermon-ico-btn px-2 py-1">
                       <i className="fas fa-microphone px-3 py-2  border-bottom border-dark"></i>
@@ -273,9 +298,13 @@ const index = (): JSX.Element => {
                   </div>
                 </div>
               ))}
-              <button className="btn btn-outline-warning px-5 py-3 my-4">
-                View More
-              </button>
+              <Link href="/sermons">
+                <a className="text-decoration-none">
+                  <button className="btn btn-outline-warning px-5 py-3 my-4">
+                    View More
+                  </button>
+                </a>
+              </Link>
             </div>
             <div className="visit-sermon-img ">
               <Image
@@ -434,6 +463,7 @@ const index = (): JSX.Element => {
                       id=""
                       className="form-control"
                       rows={10}
+                      spellCheck={true}
                     ></textarea>
                   </div>
                 </div>
@@ -499,41 +529,29 @@ const index = (): JSX.Element => {
 
 export default index;
 
-// <form className="form-inline">
-//   <div className="form-group mb-2">
-//     <label for="staticEmail2" className="sr-only">Email</label>
-//     <input type="text" readonly className="form-control-plaintext" id="staticEmail2" value="email@example.com">
-//   </div>
-//   <div className="form-group mx-sm-3 mb-2">
-//     <label for="inputPassword2" className="sr-only">Password</label>
-//     <input type="password" className="form-control" id="inputPassword2" placeholder="Password">
-//   </div>
-//   <button type="submit" className="btn btn-primary mb-2">Confirm identity</button>
-// </form>
-
 const visitsermon = [
   {
     id: 1,
     title: "The Death of Jesus - Part One",
-    time: new Date().toLocaleTimeString(),
+    time: "10:18:21 AM",
     pastor: "Pastor John Mark",
   },
   {
     id: 2,
     title: "The Death of Jesus - Part One",
-    time: new Date().toLocaleTimeString(),
+    time: "10:18:21 AM",
     pastor: "Pastor John Mark",
   },
   {
     id: 3,
     title: "The Death of Jesus - Part One",
-    time: new Date().toLocaleTimeString(),
+    time: "10:18:21 AM",
     pastor: "Pastor John Mark",
   },
   {
     id: 4,
     title: "The Death of Jesus - Part One",
-    time: new Date().toLocaleTimeString(),
+    time: "10:18:21 AM",
     pastor: "Pastor John Mark",
   },
 ];

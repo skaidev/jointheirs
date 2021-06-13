@@ -1,6 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { getURL } from "next/dist/next-server/lib/utils";
 
 const Footer = (): JSX.Element => {
+  const [header, setHeader] = useState({
+    home: false,
+    sermon: false,
+    branches: false,
+    about: false,
+    contact: false,
+    join: false,
+  });
+  useEffect(() => {
+    const url = getURL();
+    if (url === "/") {
+      setHeader({
+        ...header,
+        home: true,
+        sermon: false,
+        branches: false,
+        about: false,
+        contact: false,
+        join: false,
+      });
+    }
+    if (url.includes("/sermons")) {
+      setHeader({
+        ...header,
+        home: false,
+        sermon: true,
+        branches: false,
+        about: false,
+        contact: false,
+        join: false,
+      });
+    }
+    if (url.includes("/branches")) {
+      setHeader({
+        ...header,
+        home: false,
+        sermon: false,
+        branches: true,
+        about: false,
+        contact: false,
+        join: false,
+      });
+    }
+    if (url.includes("/about")) {
+      setHeader({
+        ...header,
+        home: false,
+        sermon: false,
+        branches: false,
+        about: true,
+        contact: false,
+        join: false,
+      });
+    }
+    if (url.includes("/contact")) {
+      setHeader({
+        ...header,
+        home: false,
+        sermon: false,
+        branches: false,
+        about: false,
+        contact: true,
+        join: false,
+      });
+    }
+    if (url.includes("/join")) {
+      setHeader({
+        ...header,
+        home: false,
+        sermon: false,
+        branches: false,
+        about: false,
+        contact: false,
+        join: true,
+      });
+    }
+  }, []);
   return (
     <footer className="poppins">
       <div className="subscribe py-5">
@@ -35,13 +114,54 @@ const Footer = (): JSX.Element => {
               Joint Heirs Assembly <br /> International
             </h4>
           </div>
-          <ul className="py-2">
-            <li>HOME</li>
-            <li> SERMON</li>
-            <li>BRANCHES</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
-            <li className="join text-warning">JOIN</li>
+          <ul>
+            <li>
+              <Link href="/">
+                <a className={header.home ? "text-warning" : "text-light"}>
+                  HOME
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/sermons">
+                <a className={header.sermon ? "text-warning" : "text-light"}>
+                  SERMON
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/branches">
+                <a className={header.branches ? "text-warning" : "text-light"}>
+                  BRANCHES
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/about">
+                <a className={header.about ? "text-warning" : "text-light"}>
+                  ABOUT
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact">
+                <a className={header.contact ? "text-warning" : "text-light"}>
+                  CONTACT
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/join">
+                <a className={header.join ? "text-warning" : "text-light"}>
+                  JOIN US
+                </a>
+              </Link>
+            </li>
           </ul>
 
           <div className="footer-icons mb-2 py-4">

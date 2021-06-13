@@ -1,0 +1,14 @@
+.video_sermon {
+  min-height: 100vh;
+  .audio-sermon {
+    min-height: inherit;
+    .video-card {
+      .col {
+        .card {
+          overflow: hidden !important;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.main {
+  min-height: 100vh;
+  background: #e5e5e5;
+  .audio {
+    &-details {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      .audio-txt {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        .audio-name {
+          word-wrap: break-word;
+          flex: 1;
+          position: relative;
+        }
+      }
+      .rhap_container {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  }
+}

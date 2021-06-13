@@ -43,6 +43,9 @@ header {
         @media screen and (min-width: 768px) {
           display: none;
         }
+        @media screen and (max-width: 768px) {
+          display: block !important;
+        }
       }
     }
     .items {
@@ -65,7 +68,12 @@ header {
             border-radius: 5px;
           }
         }
+        .active {
+          background: #f66800;
+          border-radius: 5px;
+        }
       }
+
       .join {
         color: #f66800;
         &:hover {
@@ -77,6 +85,9 @@ header {
   .min-item {
     @media screen and (min-width: 768px) {
       display: none;
+    }
+    @media screen and (max-width: 768px) {
+      display: block !important;
     }
     li {
       border: 0;

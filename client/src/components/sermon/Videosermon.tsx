@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 const Audiosermon = (): JSX.Element => {
   return (
-    <Wrapper>
+    <div className="video_sermon">
       <div className="audio-sermon animate__animated animate__zoomIn">
         <div className="audio-sermon-wrap m-container py-3">
           <div className="row row-cols-1 video-card row-cols-md-2 row-cols-lg-3 ">
@@ -18,6 +17,7 @@ const Audiosermon = (): JSX.Element => {
                     frameBorder={0}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="eager"
                   ></iframe>
                 </div>
               </div>
@@ -25,26 +25,11 @@ const Audiosermon = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
 export default Audiosermon;
-
-const Wrapper = styled.div`
-  min-height: 100vh;
-  .audio-sermon {
-    min-height: inherit;
-    .video-card {
-      .col {
-        .card {
-          overflow: hidden !important;
-          box-sizing: border-box;
-        }
-      }
-    }
-  }
-`;
 
 const video = [
   {

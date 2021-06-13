@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 const Textsermon = (): JSX.Element => {
   return (
-    <Wrapper>
+    <div className="text_sermon">
       <div className="m-container text-sermon poppins py-5">
         <div className="single-text-sermon mb-5">
           <h6 className="text-muted mb-4">February, 2020</h6>
@@ -37,41 +36,11 @@ const Textsermon = (): JSX.Element => {
           ))}
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
 export default Textsermon;
-const Wrapper = styled.div`
-  min-height: 100vh;
-  box-sizing: border-box;
-  background: #ffffff;
-  .text-sermon {
-    min-height: inherit;
-    &-card {
-      display: flex;
-      .right {
-        flex: 0.3;
-        background: #022162;
-      }
-      .left {
-        flex: 0.7;
-        background: #ededed;
-        &-wrap {
-          .first {
-            h2 {
-              color: #022162;
-            }
-            .line {
-              background: #022162;
-              height: 0.08px;
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 const writeUp = [
   {

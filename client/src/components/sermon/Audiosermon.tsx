@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import AudioPlayer from "react-h5-audio-player";
 const Audiosermon = (): JSX.Element => {
   return (
-    <Wrapper>
+    <div className="main">
       <div className="m-container audio py-5 poppins px-1 px-md-5 ">
         <h6 className="text-muted">February, 2020</h6>
         {audio?.map((audio) => (
@@ -27,37 +26,11 @@ const Audiosermon = (): JSX.Element => {
           </div>
         ))}
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
 export default Audiosermon;
-
-const Wrapper = styled.div`
-  min-height: 100vh;
-  background: #e5e5e5;
-  .audio {
-    &-details {
-      background: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      .audio-txt {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        .audio-name {
-          word-wrap: break-word;
-          flex: 1;
-          position: relative;
-        }
-      }
-      .rhap_container {
-        box-shadow: none;
-        padding: 0;
-      }
-    }
-  }
-`;
 
 const audio = [
   {

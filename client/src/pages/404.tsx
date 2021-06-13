@@ -1,7 +1,13 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import Link from "next/link";
-const Error = (): JSX.Element => {
+const NotFound = (): JSX.Element => {
+  const router = useRouter();
+
+  const handleLocation = () => {
+    return router.back();
+  };
   return (
     <div className="error">
       <h1 className="font-weight-bold mb-2 poppins">
@@ -15,12 +21,16 @@ const Error = (): JSX.Element => {
         </span>
       </h2>
       <p className="mb-3 text-center">
-        Click here to return to the home page <br />
+        Click here to
+        <b>
+          <code> Go back</code>
+        </b>
+        <br />
         <i className="fas fa-arrow-down"></i>
       </p>
       <h3 className="animate__animated animate__heartBeat animate__infinite	infinite">
         <Link href="/">
-          <a>
+          <a onClick={handleLocation}>
             <i className="fas fa-1x fa-arrow-left"></i>
           </a>
         </Link>
@@ -29,4 +39,4 @@ const Error = (): JSX.Element => {
   );
 };
 
-export default Error;
+export default NotFound;

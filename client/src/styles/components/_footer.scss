@@ -38,7 +38,7 @@ footer {
     }
   }
   .main-footer {
-    background: url("./images/Mask Group.png") no-repeat;
+    background: url("../images/Mask Group.png") no-repeat;
     background-size: cover;
 
     ul {
@@ -54,6 +54,9 @@ footer {
         align-items: flex-start;
         li {
           margin: 2px 0;
+          a {
+            text-decoration: none;
+          }
         }
       }
     }

@@ -1,0 +1,30 @@
+.text_sermon {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #ffffff;
+  .text-sermon {
+    min-height: inherit;
+    &-card {
+      display: flex;
+      .right {
+        flex: 0.3;
+        background: #022162;
+      }
+      .left {
+        flex: 0.7;
+        background: #ededed;
+        &-wrap {
+          .first {
+            h2 {
+              color: #022162;
+            }
+            .line {
+              background: #022162;
+              height: 0.08px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
